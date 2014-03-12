@@ -104,40 +104,5 @@ struct costFlow {
 		return ret;
 	}
 
-	int getDIY(int k) {
-		if(src == des) {
-			return INF;
-		}
-
-		int ret = 0;
-
-		while(spfa()) {
-			int maxF = INF, t = des, eId;
-
-			while(t != src) {
-				eId = preE[t];
-				maxF = min(maxF, e[eId].flow);
-				t = preV[t];
-			}
-
-			if(cost[des] > 0) {
-				maxF = min(maxF, k / cost[des]);
-			}
-
-			if(maxF == 0) break;
-
-			ret += maxF;
-			k -= maxF * cost[des];
-
-			for(t = des; t != src; t = preV[t]) {
-				eId = preE[t];
-				e[eId].flow -= maxF;
-				e[eId ^ 1].flow += maxF;
-			}
-		}
-
-		return ret;
-	}
-
 } cf;
 
