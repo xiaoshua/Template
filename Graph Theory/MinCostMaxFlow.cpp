@@ -73,7 +73,7 @@ struct costFlow {
 			}
 		}
 
-		return cost[des] < 0;
+		return cost[des] < INF;
 	}
 
 	int getMinCost() {
