@@ -14,8 +14,8 @@ const int N = 1e7 + 9;
 typedef long long LL;
 int p[N / 5], pn;
 bool notP[N];
-bool getP(int n = N) {
-	int i, j;
+void getP(int n = N) {
+    int i, j;
 	
     for(i = 2; i < n; ++i) {
 		if(!notP[i]) {
