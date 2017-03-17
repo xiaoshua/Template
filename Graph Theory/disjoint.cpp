@@ -1,4 +1,4 @@
-ass Disjoint {
+class Disjoint {
 private:
     vector<int> parent;
 public:
